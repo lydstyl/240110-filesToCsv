@@ -12,6 +12,7 @@ const files = [
 ]
 
 const expected = [
+  ['DATE', 'DATA1', 'PRICE', 'EXTENSION'],
   ['badNameFormat.txt', '', '', ''],
   ['231201', 'FOURNISSEUR2 RESTATION2', '32123.54', 'txt'],
   ['240110', 'FOURNISSEUR PRESTATION', '23.45', 'txt'],

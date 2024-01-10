@@ -44,19 +44,15 @@ export class CutterAAMMDDabc3Dash123E45 {
 }
 
 export class FilesCutterAAMMDDabc3Dash123E45 {
-  private allPiecesOfFileNames: string[][]
+  private allPiecesOfFileNames: string[][] = [
+    ['DATE', 'DATA1', 'PRICE', 'EXTENSION']
+  ]
   constructor(fileNames: string[]) {
-    const allPiecesOfFileNames: string[][] = []
-
     fileNames.forEach((fileName) => {
       const cutFiles = new CutterAAMMDDabc3Dash123E45(fileName)
-
       const piecesOfFileName = cutFiles.convert()
-
-      allPiecesOfFileNames.push(piecesOfFileName)
+      this.allPiecesOfFileNames.push(piecesOfFileName)
     })
-
-    this.allPiecesOfFileNames = allPiecesOfFileNames
   }
   getAllPiecesOfFileNames() {
     return this.allPiecesOfFileNames
