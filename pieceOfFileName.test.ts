@@ -3,6 +3,7 @@ import {
   PieceOfFileName,
   PieceOfFileNameAAMMDD,
   PieceOfFileName123E45,
+  PieceOfFileNameNoExtension,
   PieceOfFileNameExtension
 } from './pieceOfFileName'
 
@@ -30,6 +31,10 @@ it('PieceOfFileNameExt with txt', () => {
 it('PieceOfFileNameExt with JPEG', () => {
   const pieceOfFileName = new PieceOfFileNameExtension('JPEG')
   expect(pieceOfFileName.convert()).toEqual('jpeg')
+})
+it('PieceOfFileNameNoExtension with aaa.bbb.ccc.txt', () => {
+  const pieceOfFileName = new PieceOfFileNameNoExtension('aaa.bbb.ccc.txt')
+  expect(pieceOfFileName.convert()).toEqual('aaa.bbb.ccc')
 })
 it('PieceOfFileNameExtension with xxx.txt', () => {
   const pieceOfFileName = new PieceOfFileNameExtension('xxx.txt')

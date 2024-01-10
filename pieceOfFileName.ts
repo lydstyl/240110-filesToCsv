@@ -21,6 +21,18 @@ export class PieceOfFileName123E45 extends PieceOfFileName {
     return `${int}.${decimal}`
   }
 }
+export class PieceOfFileNameNoExtension extends PieceOfFileName {
+  convert() {
+    const pieceLowered = this.piece.toLowerCase()
+    const splited = pieceLowered.split('.')
+    if (splited.length > 2) {
+      splited.pop()
+      return splited.join('.') // aaa.bbb.txt --> aaa.bbb
+    } else {
+      return splited[0]
+    }
+  }
+}
 export class PieceOfFileNameExtension extends PieceOfFileName {
   convert() {
     const pieceLowered = this.piece.toLowerCase()

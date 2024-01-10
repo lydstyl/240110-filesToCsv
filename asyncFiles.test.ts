@@ -5,7 +5,7 @@ it('AsyncFiles.files to be an array.', async () => {
   const asyncFiles = await new AsyncFiles('testFolders/folder1')
   expect(asyncFiles.files).toBeArray()
 })
-it('AsyncFiles.files[0] to be an array.', async () => {
+it('AsyncFiles.files to equal an array.', async () => {
   const asyncFiles = await new AsyncFiles('testFolders/folder1')
   expect(asyncFiles.files).toEqual([
     '231201.FOURNISSEUR2.PRESTATION2.32123e54.txt',
