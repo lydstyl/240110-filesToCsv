@@ -1,13 +1,16 @@
 import { readdir } from 'node:fs/promises'
 
-export class AsyncFiles {
+class AsyncFiles {
+  private directoryPath: string
   files: string[] = []
-  constructor(directoryPath: string) {
-    return (async (): Promise<AsyncFiles> => {
-      const files = await readdir(directoryPath)
-      this.files = files
-      return this
-    })() as unknown as AsyncFiles // <-- type assertion
+  constructor(directoryPath: string, files: string[]) {
+    this.directoryPath = directoryPath
+    this.files = files
+  }
+
+  static async build(directoryPath: string) {
+    const files = await readdir(directoryPath)
+    return new AsyncFiles(directoryPath, files)
   }
 }
 
