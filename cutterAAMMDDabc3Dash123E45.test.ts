@@ -14,9 +14,9 @@ const files = [
 const expected = [
   ['DATE', 'DATA1', 'PRICE', 'EXTENSION'],
   ['badNameFormat.txt', '', '', ''],
-  ['231201', 'FOURNISSEUR2 RESTATION2', '32123.54', 'txt'],
-  ['240110', 'FOURNISSEUR PRESTATION', '23.45', 'txt'],
-  ['240111', 'FOURNISSEUR.PRESTATION3', '23.45', 'txt']
+  ['231201', 'FOURNISSEUR2 RESTATION2', '32123,54', 'txt'],
+  ['240110', 'FOURNISSEUR PRESTATION', '23,45', 'txt'],
+  ['240111', 'FOURNISSEUR.PRESTATION3', '23,45', 'txt']
 ]
 
 it('File name 231201-FOURNISSEUR2 RESTATION2-32123e54.txt', () => {
@@ -24,7 +24,7 @@ it('File name 231201-FOURNISSEUR2 RESTATION2-32123e54.txt', () => {
   expect(cutter.convert()).toEqual([
     '231201',
     'FOURNISSEUR2 RESTATION2',
-    '32123.54',
+    '32123,54',
     'txt'
   ])
 })

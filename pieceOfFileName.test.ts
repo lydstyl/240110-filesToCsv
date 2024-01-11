@@ -18,11 +18,11 @@ it('PieceOfFileNameAAMMDD with 241230.', () => {
 })
 it('PieceOfFileName123E45 with 123E45.', () => {
   const pieceOfFileName = new PieceOfFileName123E45('123E45')
-  expect(pieceOfFileName.convert()).toEqual('123.45')
+  expect(pieceOfFileName.convert()).toEqual('123,45')
 })
 it('PieceOfFileName123E45 with 123e45.', () => {
   const pieceOfFileName = new PieceOfFileName123E45('123e45')
-  expect(pieceOfFileName.convert()).toEqual('123.45')
+  expect(pieceOfFileName.convert()).toEqual('123,45')
 })
 it('PieceOfFileNameExt with txt', () => {
   const pieceOfFileName = new PieceOfFileNameExtension('txt')

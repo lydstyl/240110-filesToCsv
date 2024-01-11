@@ -13,12 +13,12 @@ export class PieceOfFileNameAAMMDD extends PieceOfFileName {
   }
 }
 export class PieceOfFileName123E45 extends PieceOfFileName {
-  convert() {
+  convert(decimalSeparator?: string) {
     const splited = this.piece.toLowerCase().split('e')
     const int = splited[0]
     const decimal = splited[1]
 
-    return `${int}.${decimal}`
+    return `${int}${decimalSeparator ? decimalSeparator : ','}${decimal}`
   }
 }
 export class PieceOfFileNameNoExtension extends PieceOfFileName {
