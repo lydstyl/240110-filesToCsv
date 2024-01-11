@@ -1,4 +1,5 @@
 import AsyncFiles from './asyncFiles'
+import { CsvBuilder } from './buildCsv'
 import FilesCutterAAMMDDabc3Dash123E45 from './cutterAAMMDDabc3Dash123E45'
 
 const fileNameFormats = ['AAMMDDabc3Dash123E45', 'AAMMDDabc4Dot123E45']
@@ -13,7 +14,8 @@ const main = async () => {
   const allPiecesOfFileNames = filesCutter.getAllPiecesOfFileNames()
   console.log('🚀 ~ main ~ allPiecesOfFileNames:', allPiecesOfFileNames)
 
-  // // create csv
+  const csvBuilder = new CsvBuilder(allPiecesOfFileNames, ';')
+  csvBuilder.buildCSVFile('./generatedCsv/files.csv')
 }
 
 main()

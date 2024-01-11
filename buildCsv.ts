@@ -26,5 +26,7 @@ export class CsvBuilder {
     })
   }
 
-  buildCSVFile(folderPath: string) {}
+  async buildCSVFile(csvPath: string) {
+    await Bun.write(csvPath, this.csv)
+  }
 }
